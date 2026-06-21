@@ -186,6 +186,5 @@ Two-stage GRPO consistently outperforms both single-stage GRPO and SFT+GRPO hybr
 
 📄 **[Paper (Coming Soon)]** | 🤗 **[Dataset (Coming Soon)]** | 💻 **[Code](https://github.com/yixiunanyangu/L2F-code)**
 
-<sub>Our codes and dataset will be released to promote the development of the community.</sub>
 
 </div>
