@@ -3,14 +3,9 @@
 # 🖥️ L2F: Learning to Focus on Logical Regions for High-Resolution GUI Grounding
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Conference-ECCV%202026-blue?style=for-the-badge" alt="ECCV 2026"/>
   <img src="https://img.shields.io/badge/Task-GUI%20Grounding-green?style=for-the-badge" alt="GUI Grounding"/>
   <img src="https://img.shields.io/badge/Base%20Model-Qwen2.5--VL-orange?style=for-the-badge" alt="Qwen2.5-VL"/>
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"/>
-</p>
-
-<p align="center">
-  <strong>Anonymous ECCV 2026 Submission · Paper ID #4825</strong>
 </p>
 
 </div>
@@ -170,7 +165,7 @@ For other model variants, refer to the corresponding scripts in the `evalue/` di
 | Random region training | 19.80 | 16.19 |
 | Fixed-size Sideal crop | 26.83 | 18.15 |
 | Simple prompt (no logical structure) | 24.60 | 23.47 |
-| **Full Logical Region (Ours)** | **29.09** | **38.90** |
+| **Full Logical Region (Ours)** | **28.21** | **38.90** |
 
 Two-stage GRPO consistently outperforms both single-stage GRPO and SFT+GRPO hybrids.
 
@@ -179,11 +174,9 @@ Two-stage GRPO consistently outperforms both single-stage GRPO and SFT+GRPO hybr
 ## 📝 Citation
 
 ```bibtex
-@inproceedings{l2f_eccv2026,
-  title     = {L2F: Learning to Focus on Logical Regions for High-Resolution GUI Grounding},
-  booktitle = {European Conference on Computer Vision (ECCV)},
-  year      = {2026},
-  note      = {Anonymous submission, Paper ID \#4825}
+@article{l2f2026,
+  title  = {L2F: Learning to Focus on Logical Regions for High-Resolution GUI Grounding},
+  year   = {2026}
 }
 ```
 
@@ -191,7 +184,7 @@ Two-stage GRPO consistently outperforms both single-stage GRPO and SFT+GRPO hybr
 
 <div align="center">
 
-📄 **[Paper (ECCV 2026)]** | 🤗 **[Dataset (Coming Soon)]** | 💻 **[Code](https://github.com/yixiunanyangu/L2F-code)**
+📄 **[Paper (Coming Soon)]** | 🤗 **[Dataset (Coming Soon)]** | 💻 **[Code](https://github.com/yixiunanyangu/L2F-code)**
 
 <sub>Our codes and dataset will be released to promote the development of the community.</sub>
 
