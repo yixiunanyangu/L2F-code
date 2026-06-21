@@ -52,7 +52,7 @@ We propose two complementary model architectures trained with **two-stage GRPO**
 - **Compatible with any existing GUI grounding model**
 - Trained with a multi-dimensional reward mechanism: Logic-Consistency (*R*ℓ), Regional-Consistency (*R*_iou), Regional-Constraint (*R*_C), and Format Reward (*R*_F)
 
-### 🔄 End-to-End GUI Grounding Model ()
+### 🔄 End-to-End GUI Grounding Model (L2F-E2E)
 - Unifies logical reasoning and target localization into a **single pipeline**
 - Follows "first locate the logical region, then pinpoint the task target" paradigm
 - Features a **Dynamic Weighted Reward Function (DWRF)** that progressively increases focus on task-point accuracy during training
@@ -103,7 +103,7 @@ We propose two complementary model architectures trained with **two-stage GRPO**
 | Qwen2.5-VL-7B + **L2F-PLR** | 52.30 | 12.75 | **37.19** ↑+10.37 |
 | GUI-Actor-3B | 57.98 | 18.24 | 42.20 |
 | GUI-Actor-3B + **L2F-PLR** | 63.15 | 26.16 | **49.02** ↑+6.82 |
-| **-3B** | 54.45 | 13.74 | **38.90** |
+| **L2F-E2E-3B** | 54.45 | 13.74 | **38.90** |
 | **L2F-E2E-7B** | 72.65 | 15.14 | **50.86** 🏆 |
 
 > **L2F-PLR achieves up to +21.82% absolute improvement** (CogAgent-24), outperforming the GUI-Actor+Verifier variant by an average of 3.05%.
