@@ -19,10 +19,10 @@ Applying Multi-modal Large Language Models (MLLMs) to develop GUI agents for dai
 In this paper, we propose enabling the agent to **learn to focus on target regions** imitating the logical perceptual patterns of humans. Specifically, we:
 
 - 🗂️ Construct a **logical region dataset named L2F** with 13,000 expert-annotated instruction–screenshot pairs, annotating boundary boxes containing grounding elements mimicking human attention mechanisms.
-- 🔌 Introduce a **light plug-in detection model (P-LR)** that can be seamlessly integrated with any existing grounding model.
-- 🔄 Present an **end-to-end model (E2E-GG)** that directly generates final outputs using logical regions as intermediate reflection to guide reasoning.
+- 🔌 Introduce a **light plug-in detection model (L2F-PLR)** that can be seamlessly integrated with any existing grounding model.
+- 🔄 Present an **end-to-end model (L2F-E2E)** that directly generates final outputs using logical regions as intermediate reflection to guide reasoning.
 
-> **Key Results:** P-LR improves existing models by an average absolute gain of **+12.95%**, and E2E-GG achieves **50.86%** overall accuracy on ScreenSpot-Pro, surpassing prior state-of-the-art methods.
+> **Key Results:** L2F-PLR improves existing models by an average absolute gain of **+12.95%**, and L2F-E2E achieves **50.86%** overall accuracy on ScreenSpot-Pro, surpassing prior state-of-the-art methods.
 
 ---
 
@@ -46,13 +46,13 @@ Humans naturally resolve GUI ambiguity by first identifying the relevant **funct
 
 We propose two complementary model architectures trained with **two-stage GRPO**:
 
-### 🔌 Plug-in Logical Region Detection Model (P-LR)
+### 🔌 Plug-in Logical Region Detection Model (L2F-PLR)
 - Preprocesses input screenshots by predicting and cropping to the logical region
 - Provides downstream MLLMs with a cleaner, context-aware visual input
 - **Compatible with any existing GUI grounding model**
 - Trained with a multi-dimensional reward mechanism: Logic-Consistency (*R*ℓ), Regional-Consistency (*R*_iou), Regional-Constraint (*R*_C), and Format Reward (*R*_F)
 
-### 🔄 End-to-End GUI Grounding Model (E2E-GG)
+### 🔄 End-to-End GUI Grounding Model ()
 - Unifies logical reasoning and target localization into a **single pipeline**
 - Follows "first locate the logical region, then pinpoint the task target" paradigm
 - Features a **Dynamic Weighted Reward Function (DWRF)** that progressively increases focus on task-point accuracy during training
@@ -98,19 +98,19 @@ We propose two complementary model architectures trained with **two-stage GRPO**
 | Model | Text | Icon | **Avg** |
 |:---|:---:|:---:|:---:|
 | Qwen2.5-VL-3B | 22.72 | 3.31 | 15.31 |
-| Qwen2.5-VL-3B + **P-LR** | 41.04 | 9.77 | **29.09** ↑+13.78 |
+| Qwen2.5-VL-3B + **L2F-PLR** | 41.04 | 9.77 | **29.09** ↑+13.78 |
 | Qwen2.5-VL-7B | 39.09 | 6.95 | 26.82 |
-| Qwen2.5-VL-7B + **P-LR** | 52.30 | 12.75 | **37.19** ↑+10.37 |
+| Qwen2.5-VL-7B + **L2F-PLR** | 52.30 | 12.75 | **37.19** ↑+10.37 |
 | GUI-Actor-3B | 57.98 | 18.24 | 42.20 |
-| GUI-Actor-3B + **P-LR** | 63.15 | 26.16 | **49.02** ↑+6.82 |
-| **E2E-GG-3B** | 54.45 | 13.74 | **38.90** |
-| **E2E-GG-7B** | 72.65 | 15.14 | **50.86** 🏆 |
+| GUI-Actor-3B + **L2F-PLR** | 63.15 | 26.16 | **49.02** ↑+6.82 |
+| **-3B** | 54.45 | 13.74 | **38.90** |
+| **L2F-E2E-7B** | 72.65 | 15.14 | **50.86** 🏆 |
 
-> **P-LR achieves up to +21.82% absolute improvement** (CogAgent-24), outperforming the GUI-Actor+Verifier variant by an average of 3.05%.
+> **L2F-PLR achieves up to +21.82% absolute improvement** (CogAgent-24), outperforming the GUI-Actor+Verifier variant by an average of 3.05%.
 
 ### Cross-Dataset Generalization
 
-P-LR and E2E-GG also demonstrate strong generalization on:
+L2F-PLR and L2F-E2E also demonstrate strong generalization on:
 - **ScreenSpot-Pro** — high-resolution professional GUI benchmark
 - **L2F-test** — 1,100 manually annotated custom test samples
 - **AITW** — Android in the Wild dataset
@@ -159,7 +159,7 @@ For other model variants, refer to the corresponding scripts in the `evalue/` di
 
 ## 🧪 Ablation Highlights
 
-| Configuration | P-LR Target Avg | E2E-GG-3B Avg |
+| Configuration | L2F-PLR Target Avg | L2F-E2E-3B Avg |
 |:---|:---:|:---:|
 | Baseline (Qwen2.5-VL-3B) | 15.31 | 15.31 |
 | Random region training | 19.80 | 16.19 |
