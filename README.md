@@ -165,7 +165,7 @@ For other model variants, refer to the corresponding scripts in the `evalue/` di
 | Random region training | 19.80 | 16.19 |
 | Fixed-size Sideal crop | 26.83 | 18.15 |
 | Simple prompt (no logical structure) | 24.60 | 23.47 |
-| **Full Logical Region (Ours)** | **28.21** | **38.90** |
+| **Full Logical Region (Ours)** | **29.09** | **38.90** |
 
 Two-stage GRPO consistently outperforms both single-stage GRPO and SFT+GRPO hybrids.
 
